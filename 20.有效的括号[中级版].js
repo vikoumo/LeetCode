@@ -1,5 +1,4 @@
 /**
- * https://juejin.im/post/5ddfa3def265da05ef59fe6e
  * leetcode 20题
  * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
 
