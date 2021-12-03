@@ -32,10 +32,10 @@
 // };
 // console.log(climbStairs(10));
 
-// 递归优化 => 数组记忆 => 遍历相加
+// 递归优化 => 数组记忆 => 空间压缩 => 遍历相加
 //时间的复杂度为O(n),空间复杂度为O(1)
 function climbStairs(n) {
-    if (n <= 3) return n;
+    if (n <= 2) return n;
     let a = 2, b = 1, res, idx;
     for (idx = 3; idx <=n; idx++) {
         res = a + b;
@@ -45,3 +45,23 @@ function climbStairs(n) {
     return res;
 }
 console.log(climbStairs(10));// 89
+
+// 大数优化，如果n=1000，就会取模。浏览器二进制的原因，数值就不准确了如果题目有说明可以取模
+/**
+ * 
+ * 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
+ * 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008。
+ * 0 <= n <= 100
+ */
+function numWay(n) {
+    if (n <= 2) return n;
+    let a = 2, b = 1, res, idx;
+    for (idx = 3; idx <= n; idx++) {
+        res = (a + b) % 1000000007;
+        b = a;
+        a = res;
+    }
+    return res;
+}
+console.log(climbStairs(100));// 573147844013817200000
+console.log(numWay(100));// 782204094
