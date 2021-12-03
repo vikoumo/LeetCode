@@ -63,5 +63,6 @@ function numWay(n) {
     }
     return res;
 }
+// expected 'n' to have value from 1 to 45 only
 console.log(climbStairs(100));// 573147844013817200000
 console.log(numWay(100));// 782204094
