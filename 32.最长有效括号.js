@@ -10,6 +10,7 @@
 
 //时间复杂度O(n),空间复杂度 O(n)
 // 利用下标相减的长度
+// 动态规划
 const longestValidParentheses1 = function(str) {
     let max = 0;
     let stack = [-1];
